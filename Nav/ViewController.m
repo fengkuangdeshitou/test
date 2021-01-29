@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 #import "MainViewController.h"
+#import "Nav-Swift.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong)UITableView * tableView;
@@ -27,7 +28,6 @@
 //    self.navigationController.hidesBarsOnSwipe = YES;
 //    self.navigationController.hidesBarsOnTap = YES;
 //    self.navigationController.hidesBarsWhenVerticallyCompact = YES;
-    
     
 
     
@@ -87,9 +87,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    MainViewController * main = [[MainViewController alloc] init];
-    main.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:main animated:YES];
+    PersonViewController * person = [[PersonViewController alloc] init];
+    person.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:person animated:YES];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

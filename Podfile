@@ -6,13 +6,9 @@ target 'Nav' do
   use_frameworks!
 
   # Pods for Nav
-
-end
-
-target 'Talk' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
-
-  # Pods for NewNav
+pod 'MJExtension'
+pod 'Alamofire'
+pod 'AlamofireImage'
+pod 'MJRefresh'
 
 end

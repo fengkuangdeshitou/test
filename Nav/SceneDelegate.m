@@ -6,7 +6,7 @@
 //
 
 #import "SceneDelegate.h"
-#import "ViewController.h"
+#import "Nav-Swift.h"
 
 @interface SceneDelegate ()
 
@@ -22,8 +22,8 @@
     
     self.window = [[UIWindow alloc] initWithWindowScene:scene];
     self.window.frame = UIScreen.mainScreen.bounds;
-    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
-//    nav.navigationBar.translucent = NO;
+    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:[[PersonViewController alloc] init]];
+    nav.navigationBar.translucent = NO;
 //    [nav.navigationBar setBackgroundImage:[self imageWithColor:[UIColor orangeColor]] forBarMetrics:UIBarMetricsCompact];
     nav.navigationBar.barTintColor = [UIColor orangeColor];
     self.window.rootViewController = nav;

@@ -1,3 +1,29 @@
-PODFILE CHECKSUM: df4bfde1604915d233c6a1fed7d87fd199aca66e
+PODS:
+  - Alamofire (5.4.0)
+  - AlamofireImage (4.1.0):
+    - Alamofire (~> 5.1)
+  - MJExtension (3.2.2)
+  - MJRefresh (3.4.3)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireImage
+  - MJExtension
+  - MJRefresh
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireImage
+    - MJExtension
+    - MJRefresh
+
+SPEC CHECKSUMS:
+  Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
+  MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
+  MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
+
+PODFILE CHECKSUM: 8215e98cc51339b6c234df070c1302f1925b33a5
 
 COCOAPODS: 1.9.3
