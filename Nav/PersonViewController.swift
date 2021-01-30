@@ -84,34 +84,40 @@ class PersonViewController: UIViewController, UITableViewDelegate,UITableViewDat
         })
         
 //        self.tableView.mj_header?.beginRefreshing()
-        NetWork.get(url: NetWorkUrl.newJoke(), params: ["page":"\(self.page)","count":"1","type":"video"]) { (response) in
-            print(response)
-        } failure: { (errorMessage) in
-            print(errorMessage)
-        }
+//        NetWork.get(url: NetWorkUrl.newJoke(), params: ["page":"\(self.page)","count":"1","type":"video"]) { (response) in
+//            print(response)
+//        } failure: { (errorMessage) in
+//            print(errorMessage)
+//        }
 
-        for _ in 0..<10 {
-            Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) {_ in
+//        for _ in 0..<10 {
+//            Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) {_ in
                 self.requestData()
-            }
-        }
+//            }
+//        }
         
-        for _ in 0..<10 {
-            Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) {_ in
+//        for _ in 0..<10 {
+//            Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) {_ in
                 self.requestActivitysData()
-            }
-        }
+//            }
+//        }
     }
     // getOpenServices
     func requestData(){
-        AF.request(NetWorkUrl.MemberInfoUrl, method: .post, parameters:["member_id":"5171143"] , encoder: URLEncodedFormParameterEncoder.default, headers: ["IMEI":"FDFE203C-7C2C-4DD6-986E-1E4F59A99429","encryption":"df23cef50bbcc0034df1a523334d1531","token":"733d3c2afe990074f81f600ccb773ba1"]).responseJSON { (response) in
-//            print(response)
+        AF.request(NetWorkUrl.MemberInfoUrl, method: .post, parameters:["member_id":"4415560"] , encoder: URLEncodedFormParameterEncoder.default, headers: ["IMEI":"8A611DA1-CE1E-4B4A-8DC0-A5D34F4D2978","encryption":"3dbcb41ae1d463ca055f9c22bb66b044","token":"f9f02f3705f9bbe93130eab1e538ab14","username":"18092019028"]).responseJSON { (response) in
+            switch response.result {
+            case .success:
+                print("成功")
+            case .failure(let error):
+                print(error)
+            }
+            print(response)
         }
     }
     
     func requestActivitysData(){
-        AF.request(NetWorkUrl.ActivitysUrl, method: .post, parameters:["":""] , encoder: URLEncodedFormParameterEncoder.default, headers: ["IMEI":"FDFE203C-7C2C-4DD6-986E-1E4F59A99429","encryption":"df23cef50bbcc0034df1a523334d1531","token":"733d3c2afe990074f81f600ccb773ba1"]).responseJSON { (response) in
-//            print(response)
+        AF.request(NetWorkUrl.ActivitysUrl, method: .post, parameters:["member_id":"4415560"] , encoder: URLEncodedFormParameterEncoder.default, headers: ["IMEI":"8A611DA1-CE1E-4B4A-8DC0-A5D34F4D2978","encryption":"3dbcb41ae1d463ca055f9c22bb66b044","token":"f9f02f3705f9bbe93130eab1e538ab14","username":"18092019028"]).responseJSON { (response) in
+            print(response)
         }
     }
     
