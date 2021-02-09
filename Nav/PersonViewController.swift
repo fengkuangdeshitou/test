@@ -102,22 +102,20 @@ class PersonViewController: UIViewController, UITableViewDelegate,UITableViewDat
 //            }
 //        }
     }
-    // getOpenServices
+    // "https://api.apiopen.top/getWangYiNews"
     func requestData(){
-        AF.request(NetWorkUrl.MemberInfoUrl, method: .post, parameters:["member_id":"4415560"] , encoder: URLEncodedFormParameterEncoder.default, headers: ["IMEI":"8A611DA1-CE1E-4B4A-8DC0-A5D34F4D2978","encryption":"3dbcb41ae1d463ca055f9c22bb66b044","token":"f9f02f3705f9bbe93130eab1e538ab14","username":"18092019028"]).responseJSON { (response) in
-            switch response.result {
-            case .success:
-                print("成功")
-            case .failure(let error):
-                print(error)
-            }
+        NetWork.post(url:NetWorkUrl.MemberInfoUrl , params: ["member_id":"4415560","page":"1","count":"5"]) { (response) in
             print(response)
+        } failure: { (error) in
+            print(error)
         }
     }
     
     func requestActivitysData(){
-        AF.request(NetWorkUrl.ActivitysUrl, method: .post, parameters:["member_id":"4415560"] , encoder: URLEncodedFormParameterEncoder.default, headers: ["IMEI":"8A611DA1-CE1E-4B4A-8DC0-A5D34F4D2978","encryption":"3dbcb41ae1d463ca055f9c22bb66b044","token":"f9f02f3705f9bbe93130eab1e538ab14","username":"18092019028"]).responseJSON { (response) in
+        NetWork.post(url: NetWorkUrl.ActivitysUrl, params: ["member_id":"4415560"]) { (response) in
             print(response)
+        } failure: { (error) in
+            
         }
     }
     
