@@ -151,6 +151,10 @@ static NSString * const kCellIdentifity = @"cell";
     
     test.add(1).add(2).add(3).add(4);
     
+    test.blockName = ^{
+        
+    };
+            
     NSLog(@"%d",test.result);
     
     test.frameBlock = ^CGRect(CGSize ScreenSize,CGRect frame) {

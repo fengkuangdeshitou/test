@@ -90,17 +90,17 @@ class PersonViewController: UIViewController, UITableViewDelegate,UITableViewDat
 //            print(errorMessage)
 //        }
 
-//        for _ in 0..<10 {
-//            Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) {_ in
+        for _ in 0..<10 {
+            Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) {_ in
                 self.requestData()
-//            }
-//        }
+            }
+        }
         
-//        for _ in 0..<10 {
-//            Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) {_ in
+        for _ in 0..<10 {
+            Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) {_ in
                 self.requestActivitysData()
-//            }
-//        }
+            }
+        }
     }
     // "https://api.apiopen.top/getWangYiNews"
     func requestData(){

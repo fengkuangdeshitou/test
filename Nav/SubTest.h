@@ -16,9 +16,13 @@ typedef CGRect (^BuildFrameBlock) (CGSize ScreenSize,CGRect frame);
 
 @property(nonatomic,copy)BuildFrameBlock frameBlock;
 
+@property(nonatomic,copy)void(^blockName)(void);
+
 @property(nonatomic,assign)int result;
 
 - (SubTest*(^)(int value))add;
+
+- (SubTest*(^)(int value))function1:(int)block;
 
 @end
 

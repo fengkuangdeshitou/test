@@ -57,10 +57,39 @@
         self.ViewRect = self.frameBlock(UIScreen.mainScreen.bounds.size,self.ViewRect);
     }
     [self updateFrame];
+    
+    self.func1().func1();
+    
+    self.func2.view.backgroundColor = [UIColor redColor];
+    
+    self.add(1);
+    
+    self.blockName = ^{
+        
+    };
+    
+    
+    
+}
+
+- (SubTest *)func2{
+    return self;
+}
+
+- (SubTest *(^)(void))func1{
+    return ^SubTest*{
+        return self;
+    };
 }
 
 - (SubTest*(^)(int value))add{
     return ^SubTest*(int value){
+        return self;
+    };
+}
+
+- (SubTest*(^)(int value))function1:(int)block{
+    return ^SubTest*(int dic){
         return self;
     };
 }
